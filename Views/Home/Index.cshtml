@@ -1,0 +1,25 @@
+﻿@{
+    ViewData["Title"] = "Home";
+}
+
+@model List<Book>
+
+<div class="text-center">
+    <h1 class="display-4">Amazoon Bookstore</h1>
+</div>
+
+@foreach (Book b in Model)
+{
+    <h3>@b.Title</h3>
+
+    <ul>
+        <li>Author: @b.Author</li>
+        <li>Publisher: @b.Publisher</li>
+        <li>ISBN: @b.Isbn</li>
+        <li>Classification: @b.Classification</li>
+        <li>Category: @b.Category</li>
+        <li>Pages: @b.PageCount</li>
+        <li>Price: @b.Price</li>
+    </ul>
+    <br />
+}
