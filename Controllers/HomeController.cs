@@ -1,4 +1,5 @@
 ﻿using Amazoon.Models;
+using Amazoon.Models.ViewModels;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
@@ -19,10 +20,19 @@ namespace Amazoon.Controllers
         {
             int pageSize = 5;
 
-            var x = repo.Books
+            var x = new BooksViewModel
+            {
+                Books = repo.Books
                 .OrderBy(b => b.Title)
-                .Skip(pageNum * pageSize)
-                .Take(pageSize);
+                .Take(pageSize),
+
+                PageInfo = new PageInfo
+                {
+                    TotalNumBooks = repo.Books.Count(),
+                    BooksPerPage = pageSize,
+                    CurrentPage = pageNum,
+                }
+            };
 
             return View(x);
         }

@@ -1,14 +1,13 @@
 ﻿@{
-    ViewData["Title"] = "Home";
 }
 
-@model IQueryable<Book>
+@model BooksViewModel
 
 <div class="text-center">
     <h1 class="display-4">Amazoon Bookstore</h1>
 </div>
 
-@foreach (Book b in Model)
+@foreach (Book b in Model.Books)
 {
     <h3>@b.Title</h3>
 
@@ -23,3 +22,5 @@
     </ul>
     <br />
 }
+
+<div page-model="@Model.PageInfo" page-action="Index"></div>
