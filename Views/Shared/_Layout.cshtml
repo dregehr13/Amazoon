@@ -29,12 +29,23 @@
             </div>
         </nav>
     </header>
-    <div class="container">
-        <main role="main" class="pb-3">
-            @RenderBody()
-        </main>
-    </div>
+   
+    <div class="row m-1 p-1">
 
+        <div id="types" class="col-3">
+            <vc:types></vc:types>
+        </div>
+        
+        <div class="col-9">
+
+            <div class="container">
+                <main role="main" class="pb-3">
+                    @RenderBody()
+                </main>
+            </div>
+
+        </div>
+    </div>
     <footer class="border-top footer text-muted">
         <div class="container">
             &copy; 2023 - Amazoon - <a asp-area="" asp-page="/Privacy">Privacy</a>
