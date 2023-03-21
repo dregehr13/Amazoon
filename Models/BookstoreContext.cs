@@ -19,7 +19,8 @@ namespace Amazoon.Models
         {
         }
 
-        public  DbSet<Book> Books { get; set; }
+        public DbSet<Book> Books { get; set; }
+        public DbSet<Purchase> Purchases { get; set; }
 
     }
 }

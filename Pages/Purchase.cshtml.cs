@@ -29,8 +29,6 @@ namespace Amazoon.Pages
         {
             Book b = repo.Books.FirstOrDefault(x => x.BookId == bookId);
 
-
-
             basket.AddItem(b, 1);
 
             return RedirectToPage(new { ReturnUrl = returnUrl });

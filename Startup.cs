@@ -36,6 +36,7 @@ namespace Amazoon
             });
 
             services.AddScoped<IBookStoreRepository, EFBookstoreRepository>();
+            services.AddScoped<IPurchaseRepository, EFPurchaseRepository>();
 
             services.AddRazorPages();
 
